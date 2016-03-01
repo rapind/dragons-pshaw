@@ -1,4 +1,16 @@
-= link_to 'New Quiz', new_quiz_path, class: 'btn btn-primary'
-ul
-  - @quizzes.each do |quiz|
-    li= link_to quiz.name, quiz_path(quiz)
+h3 Quizzes
+
+p= link_to 'New Quiz', new_quiz_path, class: 'btn btn-primary'
+
+table.table.bordered
+  thead
+    tr
+      th Name
+      th Number of Questions
+      th Question IDs
+  tbody
+    - @quizzes.each do |quiz|
+      tr
+        td= link_to quiz.name, quiz_path(quiz)
+        td= quiz.number_of_questions
+        td= quiz.questions.pluck(:id).join(', ')
