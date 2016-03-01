@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  standard_id: 
+  difficulty: 1.5
+
+two:
+  standard_id: 
+  difficulty: 1.5
