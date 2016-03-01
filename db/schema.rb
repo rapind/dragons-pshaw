@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301182028) do
+ActiveRecord::Schema.define(version: 20160301183907) do
 
   create_table "questions", force: :cascade do |t|
     t.integer  "standard_id"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 20160301182028) do
   end
 
   add_index "questions", ["standard_id"], name: "index_questions_on_standard_id"
+
+  create_table "quiz_questions", force: :cascade do |t|
+    t.integer  "quiz_id",     null: false
+    t.integer  "question_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "quiz_questions", ["question_id"], name: "index_quiz_questions_on_question_id"
+  add_index "quiz_questions", ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string   "name",                null: false
+    t.integer  "number_of_questions", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "standards", force: :cascade do |t|
     t.integer  "strand_id"
