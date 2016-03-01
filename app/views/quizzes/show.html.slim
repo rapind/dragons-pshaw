@@ -1,0 +1,16 @@
+h3= "Question IDs for #{@quiz.name}"
+
+table.table.bordered
+  thead
+    tr
+      th Question
+      th Standard
+      th Strand
+      th Difficulty
+  tbody
+    - @quiz.quiz_questions.each do |qq|
+      tr
+        td= qq.question_id
+        td= qq.question.standard_id
+        td= qq.question.standard.strand_id
+        td= qq.question.difficulty

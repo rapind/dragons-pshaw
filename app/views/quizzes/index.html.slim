@@ -1,0 +1,4 @@
+= link_to 'New Quiz', new_quiz_path, class: 'btn btn-primary'
+ul
+  - @quizzes.each do |quiz|
+    li= link_to quiz.name, quiz_path(quiz)

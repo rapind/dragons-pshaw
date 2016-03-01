@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160301183907) do
 
   create_table "questions", force: :cascade do |t|
-    t.integer  "standard_id"
+    t.integer  "standard_id", null: false
     t.string   "label",       null: false
     t.float    "difficulty",  null: false
     t.datetime "created_at",  null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160301183907) do
   end
 
   create_table "standards", force: :cascade do |t|
-    t.integer  "strand_id"
+    t.integer  "strand_id",  null: false
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

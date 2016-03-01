@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title
+      | Quizmaster 2000
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', media: 'all'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+    = javascript_include_tag 'application'
+  body
+    .container
+      .row
+        .col-xs-12
+          = yield
